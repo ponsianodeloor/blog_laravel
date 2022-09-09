@@ -77,6 +77,11 @@ class User extends Authenticatable
         return $this->hasMany(Video::class);
     }
 
+    //Relacion uno a muchos
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
     //Relacion uno a uno polimorfica
     public function image(){
         return $this->morphOne('App\Models\Image', 'imageable');
